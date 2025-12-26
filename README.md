@@ -1,16 +1,49 @@
-# React + Vite
+# DeepLens
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DeepLens is a **browser-based image classification tool** built with **React** and **TensorFlow.js**. It utilizes a pretrained **MobileNet** convolutional neural network (CNN) to recognize **1000 classes of images** from the ImageNet dataset. This project demonstrates how deep learning models trained in Python/TensorFlow can be deployed on the web using TensorFlow.js.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
 
-## React Compiler
+![Preview Demo](preview_demo.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Upload an image, click **Predict**, and DeepLens will show the **top-5 predicted classes with probabilities**.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- **Pretrained MobileNet model** converted to TensorFlow.js format.  
+- **Client-side inference**: no backend required.  
+- **Responsive UI** built with Bootstrap:
+  - Upload images
+  - Styled gradient button for predictions
+  - Display top-5 predictions with probabilities
+  - Light-themed design with purple/violet accents
+- Fully functional in modern browsers supporting WebGL.
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/ianwright27/deeplens.git
+cd deeplens
+```
+
+2. Install dependencies:
+```
+npm install
+```
+
+3. Place the converted TensorFlow.js model (model.json and shards) in the public/tfjs/model/ directory.
+```
+Start the development server:
+
+npm start
+``` 
+
+Open http://localhost:3000 in your browser to use DeepLens.
